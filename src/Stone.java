@@ -1,12 +1,12 @@
 public class Stone {
-    String name;
-    double karat;
-    double price;
-    String color;
-    double opacity;
+    String name;        //назва каменю
+    double karat;       //к-сть карат
+    double price;       //вартість
+    String color;       //колір
+    double opacity;     //прозорість
 
 
-    Stone()
+    Stone()             //пустий конструктор
     {
         this.name = "";
         this.karat = 0;
@@ -15,7 +15,7 @@ public class Stone {
         this.opacity = 0;
     }
 
-    public Stone(String name, double karat, double price, String color, double opacity) {
+    public Stone(String name, double karat, double price, String color, double opacity) {       //конструктор
         this.name = name;
         this.karat = karat;
         this.price = price;
@@ -23,14 +23,22 @@ public class Stone {
         this.opacity = opacity;
     }
 
-    public void Display()
+    public void Display()           //метод, що виводить дані об'єкта на екран
     {
         System.out.print(getName()+" "+getKarat()+" "+getPrice()+" "+getColor()+" "+getOpacity()+" ");
     }
 
-    public void Search_less_karat(double karat)
+    public void Search_less_karat(double karat)        //метод виводить на екран усі об'єкти каратність яких менша параметра karat
     {
         if (this.getKarat()<=karat)
+        {
+            Display();
+        }
+    }
+
+    public void Search_between_opacity(double from, double to)      //метод виводить на екран усі об'єкти, прозорість яких є в діапазоні from - to
+    {
+        if (this.getOpacity() >= from && this.getOpacity() <= to)
         {
             Display();
         }

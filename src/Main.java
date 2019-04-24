@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static ArrayList<Stone> Creation()
+    public static ArrayList<Stone> Creation()           //функція створення намиста із каменів
     {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Stone> necklace = new ArrayList<>();
@@ -82,7 +82,7 @@ public class Main {
         return necklace;
     }
 
-    public static void Sort(ArrayList<Stone> stones, int start, int end)
+    public static void Sort(ArrayList<Stone> stones, int start, int end)        //функція сортування
     {
         if (start>=end) return;
         int i = start, j = end;
@@ -144,6 +144,13 @@ public class Main {
         for (Stone s : necklace)
         {
             s.Search_less_karat(5);
+        }
+
+        System.out.println();
+        System.out.println("--------------Search stones which opacity is more than 0,1 and less than 0,8");
+        for (Stone s : necklace)
+        {
+            s.Search_between_opacity(0.1, 0.8);
         }
     }
 }
